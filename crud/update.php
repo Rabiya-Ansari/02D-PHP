@@ -6,12 +6,12 @@ if(isset($_POST['POSTbtn'])){
     $message = $_POST['message'];
 
     // echo "Name is ". $name . "and message is " . $message;
-    $insert_query = "";
-    $execute = mysqli_query($connection, $insert_query);
+   $update_query= "update user SET name= '$name' ,message ='$message' WHERE id = $_GET[id]";
+    $execute = mysqli_query($connection, $update_query);
 
     if($execute){
         echo "Data updated successfully";
-        header("location: create.php");
+        header("location:create.php");
     }
     else {
         echo "Error updating";
@@ -30,7 +30,7 @@ if(isset($_POST['POSTbtn'])){
 
 
 <?php
-$select_query = "SELECT * FROM users WHERE id = $_GET[id]";
+$select_query = "SELECT * FROM user WHERE id = $_GET[id]";
 $execute = mysqli_query($connection, $select_query);
 $fetch = mysqli_fetch_array($execute);
 ?>
