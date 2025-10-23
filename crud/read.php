@@ -10,33 +10,18 @@ include("../config/DB_connection.php");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Read Operation</title>
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-        table {
-            background-color: wheat;
-            width: 100%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        table tr th {
-            background-color: green;
-            font-size: 30px;
-        }
-        table tr  td{
-            text-align: center;
-        }
-    </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
 </head>
 
 <body>
-  <table class=border="1" cellspacing="0" cellpadding="50">
+  <table class="table ">
 
-    <tr class="bg-slate-300">
-      <th class="border border-gray-300">ID</th>
-      <th>Name</th>
-      <th>Message</th>
-      <th>Action</th>
+    <tr class="table-secondary " >
+      <th >ID</th>
+      <th >Name</th>
+      <th >Message</th>
+      <th >Action</th>
     </tr>
 
     <?php
@@ -45,13 +30,13 @@ include("../config/DB_connection.php");
     while ($fetch = mysqli_fetch_array($execute)) {
       ?>
 
-      <tr>
-        <td> <?php echo $fetch['id'] ?></td>
-        <td><?php echo $fetch['name'] ?></td>
-        <td><?php echo $fetch['message'] ?></td>
-        <td>
+      <tr class="table-light">
+        <td > <?php echo $fetch['id'] ?></td>
+        <td ><?php echo $fetch['name'] ?></td>
+        <td ><?php echo $fetch['message'] ?></td>
+        <td >
           <a href="update.php?id=<?php echo $fetch['id'] ?>">Edit</a>
-          <a href="">Delete</a>
+          <a href="delete.php?id=<?php echo $fetch['id']?>">Delete</a>
         </td>
       </tr>
       <?php
@@ -59,28 +44,9 @@ include("../config/DB_connection.php");
     ?>
   </table>
 
-  <!-- <table class="border-collapse border border-gray-400 ...">
-  <thead>
-    <tr>
-      <th class="border border-gray-300 ...">State</th>
-      <th class="border border-gray-300 ...">City</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="border border-gray-300 ...">Indiana</td>
-      <td class="border border-gray-300 ...">Indianapolis</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 ...">Ohio</td>
-      <td class="border border-gray-300 ...">Columbus</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 ...">Michigan</td>
-      <td class="border border-gray-300 ...">Detroit</td>
-    </tr>
-  </tbody>
-</table> -->
+  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
