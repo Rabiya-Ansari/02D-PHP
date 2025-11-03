@@ -1,5 +1,10 @@
 <?php
 include("../config/DB_connection.php");
+
+//  if(!isset($_SESSION['email'])){
+//         header("location: login.php");
+//     }
+
 ?>
 
 
@@ -16,6 +21,9 @@ include("../config/DB_connection.php");
 </head>
 
 <body>
+
+<a href="logout.php">logout</a>
+
   <div class="container my-5">
     <div class="card shadow-lg border-0">
       <div class="card-header bg-gradient text-white" style="background: linear-gradient(90deg, #ff7b00, #ff4500);">
