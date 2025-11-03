@@ -10,6 +10,7 @@ if(isset($_POST['register'])){
 
     if($execute){
         echo "Registered SUccessfully";
+        header("Location:login.php");
     }
     else {
         echo "Registration Failed";
