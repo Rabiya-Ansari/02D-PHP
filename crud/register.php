@@ -33,13 +33,13 @@ if(isset($_POST['register'])){
 
         <div class="col-auto">
             <label for="staticEmail2" class="visually-hidden">Name</label>
-            <input type="text" class="form-control" id="staticEmail2" placeholder="Name" name="name">
+            <input type="text" class="form-control" id="staticEmail2" placeholder="Name" name="name" required>
         </div>
 
 
         <div class="col-auto">
             <label for="staticEmail2" class="visually-hidden">Email</label>
-            <input type="text" class="form-control" id="staticEmail2" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="staticEmail2" placeholder="Email" name="email" required>
         </div>
         <div class="col-auto">
             <label for="inputPassword2" class="visually-hidden">Password</label>
