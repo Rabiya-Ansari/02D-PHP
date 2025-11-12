@@ -3,10 +3,10 @@ include("./config/db_connection.php");
 
 class Logics {
     private $con;
-    public function __construct(){
-    $db = new Connection();
 
-    $this->con = $db->getConnection();
+    public function __construct(){
+        $db = new Connection();
+        $this->con = $db->getConnection();
     }
 
     public function create($name, $message){
@@ -23,13 +23,17 @@ class Logics {
         $execute = $result->execute();
 
         $data = $result->get_result();
-        // $data1 = $data->fetch_all(MYSQLI_ASSOC);
         return $data->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function edit($name, $message, $id){
 
+        $update_query = "UPDATE users SET name = '$name', message = '$message' WHERE id = $id";
+        $result = $this->con->prepare($update_query);
+        $execute = $result->execute();
 
-
+        header("location: read.php");
+    }
 
 }
 ?>

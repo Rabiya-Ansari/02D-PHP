@@ -16,6 +16,7 @@ include("./logics.php");
             <th>ID</th>
             <th>Name</th>
             <th>Message</th>
+            <th>Action</th>
         </tr>
 
         <?php
@@ -29,6 +30,10 @@ include("./logics.php");
             <td><?php echo $user['id']?></td>
             <td><?php echo $user['name']?></td>
             <td><?php echo $user['message']?></td>
+            <td>
+                <a href="edit.php?id=<?php echo $user['id']?>">Edit</a>
+                <a href="delete.php?id=<?php echo $user['id']?>">Delete</a>
+            </td>
         </tr>
         <?php
         }
